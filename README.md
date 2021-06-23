@@ -7,6 +7,7 @@ Ps: this project is not finished!, but you can try the beta.
 
 ```bash
 pkg install python-tkinter
+pkg install zenity 
 pip install PySimpleGUI
 ```
 
