@@ -24,7 +24,9 @@ import PySimpleGUI as sg
 
 layout = [
          [sg.Text("""
-         x11-getapps is developed by yisus7u7 and its contributors. 
+         x11-getapps is developed by yisus7u7 
+         and its contributors. 
+         
          thanks for using our project!.
          """)]]
          
