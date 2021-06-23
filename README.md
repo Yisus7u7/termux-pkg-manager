@@ -1,4 +1,4 @@
-# x11-getapps
+# termux-pkg-manager
 A GUI framework for pkg termux x11
 
 Ps: this project is not finished!, but you can try the beta. 
@@ -13,7 +13,7 @@ pip install PySimpleGUI
 ### Use 
 
 ```
-./termux-pkg-manager
+./termux_pkg_manager
 ```
 
 You will also need to set up a GUI in termux.
