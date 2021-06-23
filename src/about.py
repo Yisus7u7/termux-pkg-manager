@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/env python
+#!/data/data/com.termux/files/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 #  about.py
