@@ -53,4 +53,10 @@ Examples and screenshots:
 
 You can contribute to the project if you want, it will be appreciated. 
 
+You can talk to me here :
+https://github.com/Yisus7u7/termux-pkg-manager/discussions/1
+
+Any errors or suggestions report it to:
+https://github.com/Yisus7u7/termux-pkg-manager/issues
+
 <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
