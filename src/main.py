@@ -29,6 +29,13 @@ import PySimpleGUI as sg
 import os as termux
 import sys
 
+print("""
+App: Termux pkg manager
+Version : 1.0.8-beta_build
+Creator: @Yisus7u7
+
+""")
+
 
 #  tema de la ventana
 sg.theme('BlueMono')
@@ -36,22 +43,32 @@ sg.theme('BlueMono')
 #  contenido del menu superior 
 
 
-main_menu = [['Edit', ['update mirrors', 'upgrade packages']], ['help', ['about']]]
+main_menu = [['Actions', ['update mirrors', 'upgrade packages', 'clean cache', 'autoremove cache packages']], ['Help', ['about']]]
+
+#  contenido de las apps recomendadas
+
+apps = ['1. qt-creator', '2. audacious', '3. otter-browser', '4. geany-plugins', '5. openttd',
+        '6. the-powder-toy', '7. geany', '8. leafpad', '9. ristretto', '10. kvantum',
+        '11. mtpaint', '12. chocolate-doom', '13. featherpad', '14. vim-gtk', '15. mpv-x',
+        '16. mate-terminal', '17. hexchat', '18. uget', '19 lxqt-archiver', '20. xfce4-taskmanager',
+        'Note: this list will have more content coming soon']
 
 #  contenido de la app
 
 layout = [ 
           [sg.Menu(main_menu, key='wmenu')],
-          [sg.Text("Welcome To x11-getapps", text_color=("#FF0000"))],
+          [sg.Text("Welcome To Termux pkg manager", text_color=("#FF0000"))],
           [sg.Text("Select action:", text_color=("#DA24BA"))],
           [sg.Button("install", key='instalar', button_color=("#1FAA1F")), sg.Button("uninstall", key='eliminar', button_color=("#FF0000")), sg.Button("showinfo", key='info', button_color=("#BDBD25"))],
-          [sg.Text("enter package name:")],
-          [sg.Input(key='paquete')],
-          [sg.Text("popular apps:")]]
+          [sg.Text("Enter package name:")],
+          [sg.Input(key='paquete', size=(50, 1))],
+          [sg.Text("Popular apps:")],
+          [sg.Listbox(values=apps, select_mode='extended', size=(50, 6))]
+          ]
                 
         
 
-window = sg.Window('x11-getapps', layout)
+window = sg.Window('Termux pkg manager', layout, icon=('./app_icon.png'))
 
 
 #  funciones y acciones de la app
@@ -79,6 +96,15 @@ while True:
 	
 	elif event == 'about':
 		termux.system("exec ./about.py")
+			
+	elif event == 'clean cache':
+		termux.system("apt clean")
+		termux.system("apt autoclean")
+		sg.Popup('Info', 'Junk and cache removed correctly')
+		
+	elif event == 'autoremove cache packages':
+		termux.system("apt autoremove -y | zenity --progress --title=\"apt status\" --text=\"removing unused junk packages from cache ...\" --pulsate")
+		sg.Popup('pkg status', 'junk packages and cache removed successfull')
 			
 #  funcion de instalar paquetes
 

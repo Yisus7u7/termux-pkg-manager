@@ -22,23 +22,39 @@
 
 import PySimpleGUI as sg
 
+import os
+
 layout = [
-         [sg.Text("""
-         x11-getapps is developed by yisus7u7 
-         and its contributors. 
-         
-         thanks for using our project!.
-         """)]]
+         [sg.Text("""Termux pkg manager is developed by Yisus7u7 
+and its contributors.       
+
+thanks for using our project!.
+         """, justification='left')],
+         [sg.Button("License", key='licencia')]
+         ]
          
          
 
 
-window = sg.Window('about for x11-getapps', layout)
+window = sg.Window('about this app', layout, icon=('./app_icon.png'))
 
 
 while True:
 	event, values = window.read()
 	if event == sg.WINDOW_CLOSED:
 		break
+		
+	elif event == 'licencia':
+		os.system("exec ./license.py")
+		break
+		
+	else:
+		sg.PopupError('Error', 'Unknown error')
+		
+		
+		
+		
+		
+		
 
 
