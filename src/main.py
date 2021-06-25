@@ -31,7 +31,7 @@ import sys
 
 print("""
 App: Termux pkg manager
-Version : 1.0.8-beta_build
+Version : 1.0.9-testing_build
 Creator: @Yisus7u7
 
 """)

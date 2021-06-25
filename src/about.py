@@ -25,12 +25,12 @@ import PySimpleGUI as sg
 import os
 
 layout = [
-         [sg.Text("""Termux pkg manager is developed by Yisus7u7 
-and its contributors.       
-
-thanks for using our project!.
-         """, justification='left')],
-         [sg.Button("License", key='licencia')]
+         [sg.Image('./app_icon.png', size=(300, 119))],
+         [sg.Text("Termux pkg manager is developed by Yisus7u7")],
+         [sg.Text("and its contributors.")],
+         [sg.Text("thanks for using our project!")],
+         #justification='justify')],
+         [sg.Button("License", key='licencia'), sg.Button("Ok", key='ok')]
          ]
          
          
@@ -41,7 +41,7 @@ window = sg.Window('about this app', layout, icon=('./app_icon.png'))
 
 while True:
 	event, values = window.read()
-	if event == sg.WINDOW_CLOSED:
+	if event == sg.WINDOW_CLOSED or event == 'ok':
 		break
 		
 	elif event == 'licencia':
